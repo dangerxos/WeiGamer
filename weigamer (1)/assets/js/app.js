@@ -27,18 +27,20 @@ function updateQty(id, qty){
 }
 function getProducts(){ return JSON.parse(localStorage.getItem(PRODUCTS_KEY))||seedProducts(); }
 function setProducts(p){ localStorage.setItem(PRODUCTS_KEY, JSON.stringify(p)); }
+// ...existing code...
 function seedProducts(){
   const p = [
-    {id:'SWITCH-OLED', name:'Nintendo Switch OLED', price:349.99, category:'Actual', stock:15, img: 'oled.png', desc:'Consola híbrida con pantalla OLED 7”.'},
-    {id:'PS5-SLIM', name:'PlayStation 5 Slim', price:499.99, category:'Actual', stock:10, img:'slim.png', desc:'Gráficos de última generación y SSD ultrarrápido.'},
-    {id:'XSX', name:'Xbox Series X', price:499.99, category:'Actual', stock:9, img:'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iMzIwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHgyPSIxIiB5MT0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFmMjkzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNTAlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIgogICAgICAgIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmaWxsPSIjZTVlN2ViIj5YYm94IFNlcmllcyBYPC90ZXh0Pgo8L3N2Zz4=', desc:'Potencia de sobremesa con 4K sólido.'},
-    {id:'GBA-SP', name:'Game Boy Advance SP', price:129.99, category:'Retro', stock:7, img:'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iMzIwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHgyPSIxIiB5MT0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFmMjkzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNTAlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIgogICAgICAgIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmaWxsPSIjZTVlN2ViIj5HQkEgU1A8L3RleHQ+Cjwvc3ZnPg==', desc:'Portátil clásica retroiluminada, plegable.'},
-    {id:'N64', name:'Nintendo 64', price:159.00, category:'Retro', stock:5, img:'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iMzIwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHgyPSIxIiB5MT0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFmMjkzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNTAlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIgogICAgICAgIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmaWxsPSIjZTVlN2ViIj5OaW50ZW5kbyA2NDwvdGV4dD4KPC9zdmc+', desc:'Mítica consola de 64 bits.'},
-    {id:'PS2', name:'PlayStation 2', price:149.00, category:'Retro', stock:8, img:'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iMzIwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHgyPSIxIiB5MT0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFmMjkzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNTAlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIgogICAgICAgIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmaWxsPSIjZTVlN2ViIj5QbGF5U3RhdGlvbiAyPC90ZXh0Pgo8L3N2Zz4=', desc:'La consola más vendida de la historia.'}
+    {id:'SWITCH-OLED', name:'Nintendo Switch OLED', price:349.99, category:'Actual', stock:15, img: 'assets/img/oled.png', desc:'Consola híbrida con pantalla OLED 7”.'},
+    {id:'PS5-SLIM', name:'PlayStation 5 Slim', price:499.99, category:'Actual', stock:10, img:'assets/img/slim.png', desc:'Gráficos de última generación y SSD ultrarrápido.'},
+    {id:'XSX', name:'Xbox Series X', price:499.99, category:'Actual', stock:9, img:'assets/img/seriesx.png', desc:'Potencia de sobremesa con 4K sólido.'},
+    {id:'GBA-SP', name:'Game Boy Advance SP', price:129.99, category:'Retro', stock:7, img:'assets/img/boy.png', desc:'Portátil clásica retroiluminada, plegable.'},
+    {id:'N64', name:'Nintendo 64', price:159.00, category:'Retro', stock:5, img:'assets/img/64.png', desc:'Mítica consola de 64 bits.'},
+    {id:'PS2', name:'PlayStation 2', price:149.00, category:'Retro', stock:8, img:'assets/img/play2.png', desc:'La consola más vendida de la historia.'}
   ];
   localStorage.setItem(PRODUCTS_KEY, JSON.stringify(p));
   return p;
 }
+// ...existing code...
 
 function getUsers(){ return JSON.parse(localStorage.getItem(USERS_KEY))||seedUsers(); }
 function setUsers(u){ localStorage.setItem(USERS_KEY, JSON.stringify(u)); }
