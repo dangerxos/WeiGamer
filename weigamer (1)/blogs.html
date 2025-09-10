@@ -1,0 +1,36 @@
+
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Weigamer • Consolas retro y actuales</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/validation.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Blogs</h1>
+    <div class="grid products" id="blogs"></div>
+  </div>
+  <script>
+    const BLOGS = [
+      {id:'historia-n64', img:'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iMzYwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHgyPSIxIiB5MT0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFmMjkzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNTAlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIgogICAgICAgIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmaWxsPSIjZTVlN2ViIj5IaXN0b3JpYSBONjQ8L3RleHQ+Cjwvc3ZnPg==', titulo:'La historia de Nintendo 64', breve:'Texturas borrosas, diversión nítida.', largo:'Nintendo 64 marcó época con sticks analógicos y cartuchos. En Weigamer la tenemos revisada y con control.'},
+      {id:'como-cuidar-retro', img:'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iMzYwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHgyPSIxIiB5MT0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFmMjkzNyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjUwJSIgeT0iNTAlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIgogICAgICAgIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmaWxsPSIjZTVlN2ViIj5DdWlkYSB0dSByZXRybzwvdGV4dD4KPC9zdmc+', titulo:'Cómo cuidar tus consolas retro', breve:'Limpieza, voltajes y mimos.', largo:'Evita humedad, usa transformadores adecuados y guarda en cajas libres de polvo.'}
+    ];
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const wrap = document.getElementById('blogs');
+      wrap.innerHTML = BLOGS.map(b=>`
+        <article class="card product">
+          <img src="${b.img}" alt="${b.titulo}"/>
+          <h3>${b.titulo}</h3>
+          <p style="color:#9ca3af">${b.breve}</p>
+          <a class="btn" href="blog-detail.html?id=${encodeURIComponent(b.id)}">Leer</a>
+        </article>`).join('');
+    });
+  </script>
+</body>
+</html>

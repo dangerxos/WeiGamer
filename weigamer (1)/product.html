@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Weigamer • Consolas retro y actuales</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/validation.js"></script>
+</head>
+
+<body>
+  <div class="container" id="detail"></div>
+  <script>
+    function getParam(name){
+      const u = new URL(window.location.href);
+      return u.searchParams.get(name);
+    }
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const id = getParam('id');
+      const p = productById(id);
+      const d = document.getElementById('detail');
+      if(!p){ d.innerHTML = '<div class="card">Producto no encontrado.</div>'; return; }
+      d.innerHTML = `
+        <div class="grid" style="grid-template-columns:1fr 1fr">
+          <div class="card"><img src="${p.img}" alt="${p.name}" style="width:100%;border-radius:.75rem;border:1px solid #243074"/></div>
+          <div>
+            <h1>${p.name}</h1>
+            <p style="color:#9ca3af">${p.desc}</p>
+            <p><span class="badge">${p.category}</span></p>
+            <h2>${p.price.toFixed(2)} USD</h2>
+            <div class="row-3">
+              <div>
+                <label>Cantidad</label>
+                <input type="number" id="qty" min="1" value="1"/>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn" id="add">Añadir al carrito</button>
+            </div>
+          </div>
+        </div>`;
+      document.getElementById('add').addEventListener('click', ()=>{
+        const q = Math.max(1, parseInt(document.getElementById('qty').value||'1',10));
+        addToCart(p.id, q);
+      });
+    });
+  </script>
+</body>
+</html>

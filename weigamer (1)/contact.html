@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Weigamer • Consolas retro y actuales</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/validation.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Contacto</h1>
+    <div class="card">
+      <form id="contact-form" data-validate>
+        <div class="row">
+          <div>
+            <label>Nombre</label>
+            <input name="nombre" data-rule="required|maxlen:100"/>
+          </div>
+          <div>
+            <label>Correo</label>
+            <input name="correo" data-rule="email-domain|maxlen:100" placeholder="usuario@duoc.cl"/>
+          </div>
+        </div>
+        <div>
+          <label>Comentario</label>
+          <textarea name="comentario" rows="5" data-rule="required|maxlen:500" placeholder="Escribe tu consulta..."></textarea>
+        </div>
+        <div class="actions">
+          <button class="btn" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

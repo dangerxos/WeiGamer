@@ -1,0 +1,37 @@
+
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Weigamer • Consolas retro y actuales</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/validation.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Iniciar sesión</h1>
+    <div class="card">
+      <form id="login-form" data-validate>
+        <div class="row">
+          <div>
+            <label>Correo</label>
+            <input name="email" data-rule="required|email-domain|maxlen:100" placeholder="usuario@duoc.cl"/>
+          </div>
+          <div>
+            <label>Contraseña</label>
+            <input type="password" name="password" data-rule="required|len:4,10" placeholder="4 a 10 caracteres"/>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn" type="submit">Ingresar</button>
+        </div>
+      </form>
+      <p style="color:#9ca3af;margin-top:1rem">* Solo se permiten correos con dominios duoc.cl, profesor.duoc.cl y gmail.com</p>
+    </div>
+  </div>
+</body>
+</html>

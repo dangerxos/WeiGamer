@@ -1,0 +1,68 @@
+
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Weigamer • Consolas retro y actuales</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <script defer src="assets/js/app.js"></script>
+  <script defer src="assets/js/validation.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Registro</h1>
+    <div class="card">
+      <form id="register-form" data-validate>
+        <div class="row-4">
+          <div>
+            <label>RUN (sin puntos ni guion)</label>
+            <input name="run" data-rule="required|run|min:0" placeholder="19011022K"/>
+          </div>
+          <div>
+            <label>Nombre</label>
+            <input name="nombre" data-rule="required|maxlen:50"/>
+          </div>
+          <div>
+            <label>Apellidos</label>
+            <input name="apellidos" data-rule="required|maxlen:100"/>
+          </div>
+          <div>
+            <label>Correo</label>
+            <input name="correo" data-rule="required|email-domain|maxlen:100" placeholder="usuario@duoc.cl"/>
+          </div>
+        </div>
+        <div class="row-3">
+          <div>
+            <label>Fecha Nacimiento</label>
+            <input type="date" name="fecha"/>
+          </div>
+          <div>
+            <label>Región</label>
+            <select id="region"></select>
+          </div>
+          <div>
+            <label>Comuna</label>
+            <select id="comuna"></select>
+          </div>
+        </div>
+        <div>
+          <label>Dirección</label>
+          <input name="direccion" data-rule="required|maxlen:300"/>
+        </div>
+        <div class="actions">
+          <button class="btn" type="submit">Crear cuenta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="assets/js/regions.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      populateRegiones(document.getElementById('region'), document.getElementById('comuna'));
+    });
+  </script>
+</body>
+</html>
