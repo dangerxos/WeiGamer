@@ -66,7 +66,7 @@ function mountNav(){
         <a href="contact.html">Contacto</a>
         <a href="login.html">Iniciar sesión</a>
         <a href="register.html">Registrarse</a>
-        <a class="header-cta" href="cart.html">🛒 <span class="cart-badge" id="cart-badge">0</span></a>
+        <a class="header-cta" href="carrito.html">🛒 <span class="cart-badge" id="cart-badge">0</span></a>
       </div>
     </div>`;
   document.body.prepend(nav);
