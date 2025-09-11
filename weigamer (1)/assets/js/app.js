@@ -33,7 +33,7 @@ function getUsers(){ return JSON.parse(localStorage.getItem(USERS_KEY))||seedUse
 function setUsers(u){ localStorage.setItem(USERS_KEY, JSON.stringify(u)); }
 function seedUsers(){
   const u = [
-    {run:'19011022K', nombre:'Admin', apellidos:'Weigamer', correo:'admin@duoc.cl', tipo:'Administrador', region:'RM', comuna:'Santiago', direccion:'Av. Siempre Viva 123'},
+    {run:'19011022K', nombre:'Admin', apellidos:'Weigamer', correo:'admin@gmail.cl', tipo:'Administrador', region:'RM', comuna:'Santiago', direccion:'Av. Siempre Viva 123'},
     {run:'20456789-0', nombre:'Vendedor', apellidos:'Local', correo:'seller@gmail.com', tipo:'Vendedor', region:'RM', comuna:'Providencia', direccion:'Calle Falsa 742'}
   ];
   localStorage.setItem(USERS_KEY, JSON.stringify(u));
